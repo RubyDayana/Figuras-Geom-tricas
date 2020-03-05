@@ -61,12 +61,26 @@ public class Graficar extends JPanel {
         repaint();
     }
 
+    /**
+     * Este método convierta las coordenadas en X a coordenadas que se pueden
+     * pintar en el plano cartesiano
+     *
+     * @param x
+     * @return
+     */
     private double coordenadaX(double x) {
         Interfaz plano = new Interfaz();
         double xReal = x + plano.getPlanoCartesiano().getWidth() / 2;
         return xReal;
     }
 
+    /**
+     * Este método convierta las coordenadas en Y a coordenadas que se pueden
+     * pintar en el plano cartesiano
+     *
+     * @param y
+     * @return
+     */
     private double coordenadaY(double y) {
         Interfaz plano = new Interfaz();
         double yReal = -y + plano.getPlanoCartesiano().getHeight() / 2;
