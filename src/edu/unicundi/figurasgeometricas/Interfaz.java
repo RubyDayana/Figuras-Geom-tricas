@@ -6,9 +6,11 @@
 package edu.unicundi.figurasgeometricas;
 
 //import figurasgeometricas.PlanoCartesiano.Graficar;
+import java.awt.Graphics;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -75,7 +77,9 @@ public class Interfaz extends javax.swing.JFrame {
         perimetro = new javax.swing.JLabel();
         tituloTipoTriangulo = new javax.swing.JLabel();
         tipoTriangulo = new javax.swing.JLabel();
-        graficar = new javax.swing.JButton();
+        agregar = new javax.swing.JButton();
+        graficar1 = new javax.swing.JButton();
+        seleccionarFiguraAgregada = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -317,12 +321,29 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        graficar.setBackground(new java.awt.Color(0, 255, 0));
-        graficar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        graficar.setText("GRAFICAR Y CALCULAR");
-        graficar.addActionListener(new java.awt.event.ActionListener() {
+        agregar.setBackground(new java.awt.Color(255, 204, 0));
+        agregar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        agregar.setText("AGREGAR");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                graficarActionPerformed(evt);
+                agregarActionPerformed(evt);
+            }
+        });
+
+        graficar1.setBackground(new java.awt.Color(0, 255, 0));
+        graficar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        graficar1.setText("GRAFICAR Y CALCULAR");
+        graficar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficar1ActionPerformed(evt);
+            }
+        });
+
+        seleccionarFiguraAgregada.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione la figura", "Triángulo", "Cuadrado", "Rectangulo" }));
+        seleccionarFiguraAgregada.setName("seleccionarFigura"); // NOI18N
+        seleccionarFiguraAgregada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionarFiguraAgregadaActionPerformed(evt);
             }
         });
 
@@ -334,10 +355,14 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(planoCartesiano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(graficar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelResultados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelVariables, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelResultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelVariables, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addComponent(seleccionarFiguraAgregada, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(graficar1)))
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap(306, Short.MAX_VALUE)
@@ -353,9 +378,13 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addComponent(panelVariables, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(graficar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(graficar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seleccionarFiguraAgregada))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(planoCartesiano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
@@ -371,7 +400,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -413,13 +442,41 @@ public class Interfaz extends javax.swing.JFrame {
         validarSoloNumeros(evt);
     }//GEN-LAST:event_coor4PosicionYKeyTyped
 
-    private void graficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarActionPerformed
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         validarSeleccion();
-        obtenerCoordenadas();
-    }//GEN-LAST:event_graficarActionPerformed
+    }//GEN-LAST:event_agregarActionPerformed
+
+    private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
+        validarSeleccion();
+        Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+        switch (seleccionFigura) {
+            case 1:
+                triangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                triangulo.hallarPerimetro();
+                triangulo.hallarArea();
+                triangulo.hallaTipo();
+                perimetro.setText(String.valueOf(triangulo.getPerimetro()));
+                area.setText(String.valueOf(triangulo.getArea()));
+                tipoTriangulo.setText(triangulo.getTipoTriangulo());
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
+        dibujar();
+    }//GEN-LAST:event_graficar1ActionPerformed
+
+    private void seleccionarFiguraAgregadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraAgregadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seleccionarFiguraAgregadaActionPerformed
     /**
-     * Este método utiliza la variable seleccionFigura, que obtiene el indice de seleccion de la figura 
-     * que eligió el usuario para obtener tres pares de coordenadas o cuatro pares, dependiendo del tipo de figura.
+     * Este método utiliza la variable seleccionFigura, que obtiene el indice de
+     * seleccion de la figura que eligió el usuario para obtener tres pares de
+     * coordenadas o cuatro pares, dependiendo del tipo de figura.
      */
     public void obtenerCoordenadas() {
         switch (seleccionFigura) {
@@ -433,6 +490,7 @@ public class Interfaz extends javax.swing.JFrame {
             break;
         }
     }
+
     /**
      * Este método obtiene el valor de 3 coordenadas.
      */
@@ -444,6 +502,7 @@ public class Interfaz extends javax.swing.JFrame {
         coordenada3X = Integer.parseInt(coor3PosicionX.getText());
         coordenada3Y = Integer.parseInt(coor3PosicionY.getText());
     }
+
     /**
      * Este método obtiene el valor de 4 coordenadas.
      */
@@ -452,14 +511,18 @@ public class Interfaz extends javax.swing.JFrame {
         coordenada4X = Integer.parseInt(coor4PosicionX.getText());
         coordenada4Y = Integer.parseInt(coor4PosicionY.getText());
     }
+
     /**
-     * Este método obtiene el índice de selección de el JComboBox seleccionarColor.
+     * Este método obtiene el índice de selección de el JComboBox
+     * seleccionarColor.
      */
     public void seleccionarColor() {
         seleccionColor = seleccionarColor.getSelectedIndex();
     }
+
     /**
-     * Este método obtiene el índice de selección de el JComboBox seleccionarFigura.
+     * Este método obtiene el índice de selección de el JComboBox
+     * seleccionarFigura.
      */
     public void seleccionarFigura() {
         seleccionFigura = seleccionarFigura.getSelectedIndex();
@@ -488,7 +551,8 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     /**
-     * Este metodo valida que los campos JTextField no esten vacios cuando el usuario de clic en el boton de GRAFICAR Y CALCULAR.
+     * Este metodo valida que los campos JTextField no esten vacios cuando el
+     * usuario de clic en el boton de GRAFICAR Y CALCULAR.
      */
     public void validarCamposVacios() {
         if (coor1PosicionX.getText().isEmpty() || coor1PosicionY.getText().isEmpty()) {
@@ -509,14 +573,17 @@ public class Interfaz extends javax.swing.JFrame {
             obtenerCoordenadas();
         }
     }
+
     /**
      * Mensaje recursivo para mostrar advertencias
      */
     public void mensajeCamposVacios() {
         JOptionPane.showMessageDialog(null, "Digite las coordenadas de la " + faltaCoordenada + " posicion ", "CAMPOS VACIOS", JOptionPane.INFORMATION_MESSAGE);
     }
+
     /**
-     * Este método valida que los elementos de tipo JComboBox tengan una seleccion válida.
+     * Este método valida que los elementos de tipo JComboBox tengan una
+     * seleccion válida.
      */
     public void validarSeleccion() {
         String opcion = "";
@@ -532,10 +599,11 @@ public class Interfaz extends javax.swing.JFrame {
             validarCamposVacios();
         }
     }
-    
+
     /**
      * Este método valida que en los JTextField se digiten solo números.
-     * @param evt 
+     *
+     * @param evt
      */
     public void validarSoloNumeros(java.awt.event.KeyEvent evt) {
         char validarNumeros = evt.getKeyChar();
@@ -564,6 +632,24 @@ public class Interfaz extends javax.swing.JFrame {
         tituloCoordenada4.setVisible(true);
         coor4PosicionX.setVisible(true);
         coor4PosicionY.setVisible(true);
+    }
+
+    public class DibujarFiguras extends JPanel {
+        
+        protected void paintComponent(Graphics g) {
+            Graficar graficar = new Graficar();
+            graficar.seleccionarColor(seleccionColor, g);
+            graficar.paintComponent(seleccionFigura, coordenada1X, coordenada1Y, coordenada2X, coordenada2Y, coordenada3X, coordenada3Y, coordenada4X, coordenada4Y, g);
+        }
+
+    }
+
+    private void dibujar() {
+        Interfaz.DibujarFiguras dibujo = new Interfaz.DibujarFiguras();
+        dibujo.setBounds(100, 100, 1000, 1000);
+        dibujo.setOpaque(false);
+        planoCartesiano.add(dibujo);
+        planoCartesiano.repaint();
     }
 
 //GETTER 
@@ -650,19 +736,7 @@ public class Interfaz extends javax.swing.JFrame {
     public int getCoordenada4Y() {
         return coordenada4Y;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -706,6 +780,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregar;
     private javax.swing.JLabel area;
     private javax.swing.JTextField coor1PosicionX;
     private javax.swing.JTextField coor1PosicionY;
@@ -716,7 +791,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField coor4PosicionX;
     private javax.swing.JTextField coor4PosicionY;
     private javax.swing.JLabel digiteCoordenadas;
-    private javax.swing.JButton graficar;
+    private javax.swing.JButton graficar1;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelResultados;
     private javax.swing.JPanel panelVariables;
@@ -724,6 +799,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel planoCartesiano;
     private javax.swing.JComboBox seleccionarColor;
     private javax.swing.JComboBox seleccionarFigura;
+    private javax.swing.JComboBox seleccionarFiguraAgregada;
     private javax.swing.JLabel tipoTriangulo;
     private javax.swing.JLabel tituloArea;
     private javax.swing.JLabel tituloCoordenada1;
