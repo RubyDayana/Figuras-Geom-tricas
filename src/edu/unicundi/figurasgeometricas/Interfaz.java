@@ -73,15 +73,23 @@ public class Interfaz extends javax.swing.JFrame {
         tituloPrincipal = new javax.swing.JLabel();
         planoCartesiano = new javax.swing.JPanel();
         panelResultados = new javax.swing.JPanel();
-        tituloArea = new javax.swing.JLabel();
-        tituloPerimetro = new javax.swing.JLabel();
-        area = new javax.swing.JLabel();
-        perimetro = new javax.swing.JLabel();
-        tituloTipoTriangulo = new javax.swing.JLabel();
-        tipoTriangulo = new javax.swing.JLabel();
+        tituloArea1 = new javax.swing.JLabel();
+        tituloPerimetro1 = new javax.swing.JLabel();
+        area1 = new javax.swing.JLabel();
+        perimetro1 = new javax.swing.JLabel();
+        tituloTipoTriangulo1 = new javax.swing.JLabel();
+        tipoTriangulo1 = new javax.swing.JLabel();
+        tipoFigura1 = new javax.swing.JLabel();
         agregar = new javax.swing.JButton();
         graficar1 = new javax.swing.JButton();
-        seleccionarFiguraAgregada = new javax.swing.JComboBox();
+        panelResultados1 = new javax.swing.JPanel();
+        tituloArea2 = new javax.swing.JLabel();
+        tituloPerimetro2 = new javax.swing.JLabel();
+        area2 = new javax.swing.JLabel();
+        perimetro2 = new javax.swing.JLabel();
+        tituloTipoTriangulo2 = new javax.swing.JLabel();
+        tipoTriangulo2 = new javax.swing.JLabel();
+        tipoFigura2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -228,9 +236,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(seleccionarFigura, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(digiteCoordenadas)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tituloCoordenada1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tituloCoordenada3))
@@ -250,7 +258,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                .addGap(37, 37, 37))
         );
 
         tituloPrincipal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -264,7 +272,7 @@ public class Interfaz extends javax.swing.JFrame {
         planoCartesiano.setLayout(planoCartesianoLayout);
         planoCartesianoLayout.setHorizontalGroup(
             planoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 417, Short.MAX_VALUE)
         );
         planoCartesianoLayout.setVerticalGroup(
             planoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,17 +281,22 @@ public class Interfaz extends javax.swing.JFrame {
 
         panelResultados.setBackground(new java.awt.Color(236, 239, 241));
 
-        tituloArea.setText("Area de la figura");
+        tituloArea1.setText("Area");
 
-        tituloPerimetro.setText("Perímetro de la figura");
+        tituloPerimetro1.setText("Perímetro");
 
-        area.setText("---");
+        area1.setText("---");
 
-        perimetro.setText("---");
+        perimetro1.setText("---");
 
-        tituloTipoTriangulo.setText("Tipo de triangulo");
+        tituloTipoTriangulo1.setText("Tipo de triangulo");
 
-        tipoTriangulo.setText("---");
+        tipoTriangulo1.setText("---");
+
+        tipoFigura1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tipoFigura1.setText("Figura 1");
+        tipoFigura1.setToolTipText("");
+        tipoFigura1.setName("tituloCoordenadas"); // NOI18N
 
         javax.swing.GroupLayout panelResultadosLayout = new javax.swing.GroupLayout(panelResultados);
         panelResultados.setLayout(panelResultadosLayout);
@@ -292,35 +305,45 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(panelResultadosLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(area)
-                    .addComponent(tituloArea)
-                    .addComponent(tituloTipoTriangulo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tipoTriangulo)
-                    .addComponent(tituloPerimetro)
-                    .addComponent(perimetro))
-                .addGap(25, 25, 25))
+                    .addGroup(panelResultadosLayout.createSequentialGroup()
+                        .addComponent(tipoTriangulo1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelResultadosLayout.createSequentialGroup()
+                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(area1)
+                            .addComponent(tituloArea1)
+                            .addComponent(tituloTipoTriangulo1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tituloPerimetro1)
+                            .addComponent(perimetro1))
+                        .addGap(25, 25, 25))))
+            .addGroup(panelResultadosLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(tipoFigura1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelResultadosLayout.setVerticalGroup(
             panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelResultadosLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
+                .addComponent(tipoFigura1)
+                .addGap(20, 20, 20)
                 .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultadosLayout.createSequentialGroup()
-                        .addComponent(tituloArea)
+                        .addComponent(tituloArea1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(area)
+                        .addComponent(area1)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultadosLayout.createSequentialGroup()
-                        .addComponent(tituloPerimetro)
+                        .addComponent(tituloPerimetro1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(perimetro)
+                        .addComponent(perimetro1)
                         .addGap(18, 18, 18)
-                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloTipoTriangulo)
-                            .addComponent(tipoTriangulo))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(tituloTipoTriangulo1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tipoTriangulo1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         agregar.setBackground(new java.awt.Color(255, 204, 0));
@@ -341,13 +364,72 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        seleccionarFiguraAgregada.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione la figura", "Triángulo", "Cuadrado", "Rectangulo" }));
-        seleccionarFiguraAgregada.setName("seleccionarFigura"); // NOI18N
-        seleccionarFiguraAgregada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seleccionarFiguraAgregadaActionPerformed(evt);
-            }
-        });
+        panelResultados1.setBackground(new java.awt.Color(236, 239, 241));
+
+        tituloArea2.setText("Area");
+
+        tituloPerimetro2.setText("Perímetro");
+
+        area2.setText("---");
+
+        perimetro2.setText("---");
+
+        tituloTipoTriangulo2.setText("Tipo de triangulo");
+
+        tipoTriangulo2.setText("---");
+
+        tipoFigura2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tipoFigura2.setText("Figura 2");
+        tipoFigura2.setToolTipText("");
+        tipoFigura2.setName("tituloCoordenadas"); // NOI18N
+
+        javax.swing.GroupLayout panelResultados1Layout = new javax.swing.GroupLayout(panelResultados1);
+        panelResultados1.setLayout(panelResultados1Layout);
+        panelResultados1Layout.setHorizontalGroup(
+            panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResultados1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelResultados1Layout.createSequentialGroup()
+                        .addComponent(tipoTriangulo2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelResultados1Layout.createSequentialGroup()
+                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(area2)
+                            .addComponent(tituloArea2)
+                            .addComponent(tituloTipoTriangulo2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tituloPerimetro2)
+                            .addComponent(perimetro2))
+                        .addGap(25, 25, 25))))
+            .addGroup(panelResultados1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(tipoFigura2)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelResultados1Layout.setVerticalGroup(
+            panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResultados1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tipoFigura2)
+                .addGap(20, 20, 20)
+                .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultados1Layout.createSequentialGroup()
+                        .addComponent(tituloArea2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(area2)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultados1Layout.createSequentialGroup()
+                        .addComponent(tituloPerimetro2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(perimetro2)
+                        .addGap(18, 18, 18)
+                        .addComponent(tituloTipoTriangulo2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tipoTriangulo2)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -358,13 +440,13 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(planoCartesiano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelResultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelVariables, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(seleccionarFiguraAgregada, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(graficar1)))
+                    .addComponent(graficar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelResultados1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap(306, Short.MAX_VALUE)
@@ -379,15 +461,15 @@ public class Interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(panelVariables, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(graficar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(seleccionarFiguraAgregada))
+                        .addComponent(panelVariables, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(graficar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelResultados1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelResultados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(planoCartesiano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
@@ -449,7 +531,7 @@ public class Interfaz extends javax.swing.JFrame {
         switch (seleccionFigura) {
             case 1:
                 Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                triangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                //triangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
                 /*triangulo.hallarPerimetro();
                  triangulo.hallarArea();
                  triangulo.hallaTipo();*/
@@ -458,98 +540,61 @@ public class Interfaz extends javax.swing.JFrame {
                 break;
             case 2:
                 Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-                cuadrado.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-               /* cuadrado.hallarLado();
-                cuadrado.getPerimetro();
-                cuadrado.hallarArea();*/
+                //cuadrado.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                /* cuadrado.hallarLado();
+                 cuadrado.getPerimetro();
+                 cuadrado.hallarArea();*/
                 figuras[1] = cuadrado;
                 break;
             case 3:
                 Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-                rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-               /* rectangulo.hallarLado();
-                rectangulo.getPerimetro();
-                rectangulo.hallarArea();*/
+               // rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                /* rectangulo.hallarLado();
+                 rectangulo.getPerimetro();
+                 rectangulo.hallarArea();*/
                 figuras[2] = rectangulo;
                 break;
         }
 
     }//GEN-LAST:event_agregarActionPerformed
 
-    public void seleccionarFiguraAgregada() {
-        seleccionFiguraAgregada = seleccionarFiguraAgregada.getSelectedIndex();
-    }
+   
 
 
     private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
         validarSeleccion();
-        seleccionarFiguraAgregada();
 
         Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
         Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
         Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-        switch (seleccionFiguraAgregada) {
-            case 1:
-                for (int i = 0; i < figuras.length; i++) {
-                    if (figuras[i] instanceof Triangulo) {
-                        triangulo.hallarPerimetro();
-                        triangulo.hallarArea();
-                        triangulo.hallaTipo();
-                        perimetro.setText(String.valueOf(((Triangulo) figuras[i]).getPerimetro()));
-                        area.setText(String.valueOf(((Triangulo) figuras[i]).getArea()));
-                        tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());
-                    }
-                }
-                break;
 
-            case 2:
-                for (int i = 0; i < figuras.length; i++) {
-                    if (figuras[i] instanceof Cuadrado) {
-                        cuadrado.hallarLado();
-                        cuadrado.getPerimetro();
-                        cuadrado.hallarArea();
-                        perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
-                        area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
+        for (int i = 0; i < figuras.length; i++) {
+            if (figuras[i] instanceof Triangulo) {
+                triangulo.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
+                triangulo.hallarPerimetro();
+                triangulo.hallarArea();
+                triangulo.hallaTipo();
+                perimetro1.setText(String.valueOf(triangulo.getPerimetro()));
+                area1.setText(String.valueOf(triangulo.getArea()));
+                
+                //tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());
+            } else if (figuras[i] instanceof Cuadrado) {
+                
+                //cuadrado.hallarLado();
+                //cuadrado.getPerimetro();
+                //cuadrado.hallarArea();
+                //perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
+                //area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
 
-                    }
-                }
-                break;
-            case 3:
-                for (int i = 0; i < figuras.length; i++) {
-                    if (figuras[i] instanceof Rectangulo) {
-                        perimetro.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
-                        area.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
+            } else if (figuras[i] instanceof Rectangulo) {
+                perimetro1.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
+                area1.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
 
-                    }
-
-                }
-                break;
+            }
         }
-        /*for (int i = 0; i < figuras.length; i++) {
-         if (figuras[i] instanceof Triangulo) {
-         perimetro.setText(String.valueOf(((Triangulo) figuras[i]).getPerimetro()));
-         area.setText(String.valueOf(((Triangulo) figuras[i]).getArea()));
-         tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());                
-
-         } else if (figuras[i] instanceof Cuadrado) {
-         perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
-         area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
-
-         } else if (figuras[i] instanceof Rectangulo) {
-         perimetro.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
-         area.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
-
-         }else{
-         JOptionPane.showMessageDialog(null, "No existen figuras almacenadas", "Error No existen Figuras", JOptionPane.INFORMATION_MESSAGE);
-         }
-         }*/
 
         dibujar();
     }//GEN-LAST:event_graficar1ActionPerformed
-
-    private void seleccionarFiguraAgregadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraAgregadaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seleccionarFiguraAgregadaActionPerformed
     /**
      * Este método utiliza la variable seleccionFigura, que obtiene el indice de
      * seleccion de la figura que eligió el usuario para obtener tres pares de
@@ -862,7 +907,8 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
-    private javax.swing.JLabel area;
+    private javax.swing.JLabel area1;
+    private javax.swing.JLabel area2;
     private javax.swing.JTextField coor1PosicionX;
     private javax.swing.JTextField coor1PosicionY;
     private javax.swing.JTextField coor2PosicionX;
@@ -875,20 +921,27 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton graficar1;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelResultados;
+    private javax.swing.JPanel panelResultados1;
     private javax.swing.JPanel panelVariables;
-    private javax.swing.JLabel perimetro;
+    private javax.swing.JLabel perimetro1;
+    private javax.swing.JLabel perimetro2;
     private javax.swing.JPanel planoCartesiano;
     private javax.swing.JComboBox seleccionarColor;
     private javax.swing.JComboBox seleccionarFigura;
-    private javax.swing.JComboBox seleccionarFiguraAgregada;
-    private javax.swing.JLabel tipoTriangulo;
-    private javax.swing.JLabel tituloArea;
+    private javax.swing.JLabel tipoFigura1;
+    private javax.swing.JLabel tipoFigura2;
+    private javax.swing.JLabel tipoTriangulo1;
+    private javax.swing.JLabel tipoTriangulo2;
+    private javax.swing.JLabel tituloArea1;
+    private javax.swing.JLabel tituloArea2;
     private javax.swing.JLabel tituloCoordenada1;
     private javax.swing.JLabel tituloCoordenada2;
     private javax.swing.JLabel tituloCoordenada3;
     private javax.swing.JLabel tituloCoordenada4;
-    private javax.swing.JLabel tituloPerimetro;
+    private javax.swing.JLabel tituloPerimetro1;
+    private javax.swing.JLabel tituloPerimetro2;
     private javax.swing.JLabel tituloPrincipal;
-    private javax.swing.JLabel tituloTipoTriangulo;
+    private javax.swing.JLabel tituloTipoTriangulo1;
+    private javax.swing.JLabel tituloTipoTriangulo2;
     // End of variables declaration//GEN-END:variables
 }
