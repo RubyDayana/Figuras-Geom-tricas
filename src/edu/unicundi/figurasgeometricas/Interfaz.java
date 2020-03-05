@@ -548,7 +548,7 @@ public class Interfaz extends javax.swing.JFrame {
                 break;
             case 3:
                 Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-               // rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                // rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
                 /* rectangulo.hallarLado();
                  rectangulo.getPerimetro();
                  rectangulo.hallarArea();*/
@@ -557,8 +557,6 @@ public class Interfaz extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_agregarActionPerformed
-
-   
 
 
     private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
@@ -576,10 +574,14 @@ public class Interfaz extends javax.swing.JFrame {
                 triangulo.hallaTipo();
                 perimetro1.setText(String.valueOf(triangulo.getPerimetro()));
                 area1.setText(String.valueOf(triangulo.getArea()));
-                
+                dibujar();
                 //tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());
             } else if (figuras[i] instanceof Cuadrado) {
-                
+                cuadrado.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
+                cuadrado.hallarLado();
+                cuadrado.hallarPerimetro();
+                cuadrado.hallarArea();
+                dibujar();
                 //cuadrado.hallarLado();
                 //cuadrado.getPerimetro();
                 //cuadrado.hallarArea();
@@ -593,7 +595,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         }
 
-        dibujar();
+
     }//GEN-LAST:event_graficar1ActionPerformed
     /**
      * Este método utiliza la variable seleccionFigura, que obtiene el indice de
