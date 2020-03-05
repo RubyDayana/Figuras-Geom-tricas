@@ -8,7 +8,7 @@ package edu.unicundi.figurasgeometricas;
 /**
  *
  * @author Andres Gomez - Ruby Cardenas */
-public class CuadradoRectangulo extends FigurasGeometricas {
+public abstract class CuadradoRectangulo extends FigurasGeometricas {
 
     private int coordenadaX4;
     private int coordenadaY4;
@@ -21,18 +21,16 @@ public class CuadradoRectangulo extends FigurasGeometricas {
 
     }
 
-    public void hallarLados() {
+    public void hallarLado() {
         this.lado4 = (int) Math.sqrt(Math.pow((coordenadaX4 - getCoordenadaX3()), 2) + Math.pow((coordenadaY4 - getCoordenadaY3()), 2));
     }
 
-    @Override
-    public void hallarArea() {
-        setArea(getLado1() * getLado2());
+    public int getLado4() {
+        return lado4;
     }
 
-    @Override
-    public void hallarPerimetro() {
-        setPerimetro(getLado1()+getLado2()+getLado3()+lado4);
-    }
+  
+
+   
 
 }

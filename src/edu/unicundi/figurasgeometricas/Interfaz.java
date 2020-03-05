@@ -21,6 +21,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private int seleccionFigura;
     private int seleccionColor;
+    private int seleccionFiguraAgregada;
     private String faltaCoordenada = "";
     private boolean validarTipoFigura;
     private boolean validarCamposVacios;
@@ -34,6 +35,7 @@ public class Interfaz extends javax.swing.JFrame {
     private int coordenada3Y;
     private int coordenada4X;
     private int coordenada4Y;
+    FigurasGeometricas[] figuras = new FigurasGeometricas[3];
 
     /**
      * Creates new form Interfaz
@@ -444,29 +446,104 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         validarSeleccion();
-    }//GEN-LAST:event_agregarActionPerformed
-
-    private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
-        validarSeleccion();
-        Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
         switch (seleccionFigura) {
             case 1:
+                Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
                 triangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                triangulo.hallarPerimetro();
-                triangulo.hallarArea();
-                triangulo.hallaTipo();
-                perimetro.setText(String.valueOf(triangulo.getPerimetro()));
-                area.setText(String.valueOf(triangulo.getArea()));
-                tipoTriangulo.setText(triangulo.getTipoTriangulo());
+                /*triangulo.hallarPerimetro();
+                 triangulo.hallarArea();
+                 triangulo.hallaTipo();*/
+                figuras[0] = triangulo;
 
                 break;
             case 2:
-
+                Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+                cuadrado.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+               /* cuadrado.hallarLado();
+                cuadrado.getPerimetro();
+                cuadrado.hallarArea();*/
+                figuras[1] = cuadrado;
                 break;
             case 3:
-
+                Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+                rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+               /* rectangulo.hallarLado();
+                rectangulo.getPerimetro();
+                rectangulo.hallarArea();*/
+                figuras[2] = rectangulo;
                 break;
         }
+
+    }//GEN-LAST:event_agregarActionPerformed
+
+    public void seleccionarFiguraAgregada() {
+        seleccionFiguraAgregada = seleccionarFiguraAgregada.getSelectedIndex();
+    }
+
+
+    private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
+        validarSeleccion();
+        seleccionarFiguraAgregada();
+
+        Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+        Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+        Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+        switch (seleccionFiguraAgregada) {
+            case 1:
+                for (int i = 0; i < figuras.length; i++) {
+                    if (figuras[i] instanceof Triangulo) {
+                        triangulo.hallarPerimetro();
+                        triangulo.hallarArea();
+                        triangulo.hallaTipo();
+                        perimetro.setText(String.valueOf(((Triangulo) figuras[i]).getPerimetro()));
+                        area.setText(String.valueOf(((Triangulo) figuras[i]).getArea()));
+                        tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());
+                    }
+                }
+                break;
+
+            case 2:
+                for (int i = 0; i < figuras.length; i++) {
+                    if (figuras[i] instanceof Cuadrado) {
+                        cuadrado.hallarLado();
+                        cuadrado.getPerimetro();
+                        cuadrado.hallarArea();
+                        perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
+                        area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
+
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < figuras.length; i++) {
+                    if (figuras[i] instanceof Rectangulo) {
+                        perimetro.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
+                        area.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
+
+                    }
+
+                }
+                break;
+        }
+        /*for (int i = 0; i < figuras.length; i++) {
+         if (figuras[i] instanceof Triangulo) {
+         perimetro.setText(String.valueOf(((Triangulo) figuras[i]).getPerimetro()));
+         area.setText(String.valueOf(((Triangulo) figuras[i]).getArea()));
+         tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());                
+
+         } else if (figuras[i] instanceof Cuadrado) {
+         perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
+         area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
+
+         } else if (figuras[i] instanceof Rectangulo) {
+         perimetro.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
+         area.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
+
+         }else{
+         JOptionPane.showMessageDialog(null, "No existen figuras almacenadas", "Error No existen Figuras", JOptionPane.INFORMATION_MESSAGE);
+         }
+         }*/
+
         dibujar();
     }//GEN-LAST:event_graficar1ActionPerformed
 
@@ -634,8 +711,12 @@ public class Interfaz extends javax.swing.JFrame {
         coor4PosicionY.setVisible(true);
     }
 
+    private void seleccionFiguraAgregada() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public class DibujarFiguras extends JPanel {
-        
+
         protected void paintComponent(Graphics g) {
             Graficar graficar = new Graficar();
             graficar.seleccionarColor(seleccionColor, g);
