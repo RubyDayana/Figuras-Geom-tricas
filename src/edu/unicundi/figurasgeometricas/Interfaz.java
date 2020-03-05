@@ -765,6 +765,8 @@ public class Interfaz extends javax.swing.JFrame {
     public class DibujarFiguras extends JPanel {
 
         protected void paintComponent(Graphics g) {
+            g.drawLine(0, planoCartesiano.getHeight() / 2, planoCartesiano.getWidth(), planoCartesiano.getHeight() / 2);
+            g.drawLine(planoCartesiano.getWidth() / 2, 0, planoCartesiano.getWidth() / 2, planoCartesiano.getHeight());
             Graficar graficar = new Graficar();
             graficar.seleccionarColor(seleccionColor, g);
             graficar.paintComponent(seleccionFigura, coordenada1X, coordenada1Y, coordenada2X, coordenada2Y, coordenada3X, coordenada3Y, coordenada4X, coordenada4Y, g);
@@ -774,7 +776,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void dibujar() {
         Interfaz.DibujarFiguras dibujo = new Interfaz.DibujarFiguras();
-        dibujo.setBounds(100, 100, 1000, 1000);
+        dibujo.setBounds(0, 0, 1000, 1000);
         dibujo.setOpaque(false);
         planoCartesiano.add(dibujo);
         planoCartesiano.repaint();
@@ -865,6 +867,10 @@ public class Interfaz extends javax.swing.JFrame {
         return coordenada4Y;
     }
 
+    public JPanel getPlanoCartesiano() {
+        return planoCartesiano;
+    }
+    
     /**
      * @param args the command line arguments
      */
