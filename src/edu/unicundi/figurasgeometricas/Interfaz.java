@@ -79,8 +79,6 @@ public class Interfaz extends javax.swing.JFrame {
         tituloPerimetro1 = new javax.swing.JLabel();
         area1 = new javax.swing.JLabel();
         perimetro1 = new javax.swing.JLabel();
-        tituloTipoTriangulo1 = new javax.swing.JLabel();
-        tipoTriangulo1 = new javax.swing.JLabel();
         tipoFigura1 = new javax.swing.JLabel();
         agregar = new javax.swing.JButton();
         graficar1 = new javax.swing.JButton();
@@ -89,8 +87,6 @@ public class Interfaz extends javax.swing.JFrame {
         tituloPerimetro2 = new javax.swing.JLabel();
         area2 = new javax.swing.JLabel();
         perimetro2 = new javax.swing.JLabel();
-        tituloTipoTriangulo2 = new javax.swing.JLabel();
-        tipoTriangulo2 = new javax.swing.JLabel();
         tipoFigura2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -308,10 +304,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         perimetro1.setText("---");
 
-        tituloTipoTriangulo1.setText("Tipo de triangulo");
-
-        tipoTriangulo1.setText("---");
-
         tipoFigura1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tipoFigura1.setText("Figura 1");
         tipoFigura1.setToolTipText("");
@@ -324,20 +316,13 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(panelResultadosLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelResultadosLayout.createSequentialGroup()
-                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tipoTriangulo1)
-                            .addComponent(tituloTipoTriangulo1))
-                        .addGap(59, 73, Short.MAX_VALUE))
-                    .addGroup(panelResultadosLayout.createSequentialGroup()
-                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(area1)
-                            .addComponent(tituloArea1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tituloPerimetro1)
-                            .addComponent(perimetro1))
-                        .addGap(42, 42, 42))))
+                    .addComponent(area1)
+                    .addComponent(tituloArea1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tituloPerimetro1)
+                    .addComponent(perimetro1))
+                .addGap(42, 42, 42))
             .addGroup(panelResultadosLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(tipoFigura1)
@@ -354,16 +339,12 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(tituloArea1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(area1)
-                        .addGap(32, 32, 32))
+                        .addContainerGap(81, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultadosLayout.createSequentialGroup()
                         .addComponent(tituloPerimetro1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(perimetro1)
-                        .addGap(18, 18, 18)
-                        .addComponent(tituloTipoTriangulo1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tipoTriangulo1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         agregar.setBackground(new java.awt.Color(255, 204, 0));
@@ -394,10 +375,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         perimetro2.setText("---");
 
-        tituloTipoTriangulo2.setText("Tipo de triangulo");
-
-        tipoTriangulo2.setText("---");
-
         tipoFigura2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tipoFigura2.setText("Figura 2");
         tipoFigura2.setToolTipText("");
@@ -410,20 +387,13 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(panelResultados1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelResultados1Layout.createSequentialGroup()
-                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(area2)
-                            .addComponent(tituloArea2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tituloPerimetro2)
-                            .addComponent(perimetro2))
-                        .addGap(46, 46, 46))
-                    .addGroup(panelResultados1Layout.createSequentialGroup()
-                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tipoTriangulo2)
-                            .addComponent(tituloTipoTriangulo2))
-                        .addGap(59, 69, Short.MAX_VALUE))))
+                    .addComponent(area2)
+                    .addComponent(tituloArea2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tituloPerimetro2)
+                    .addComponent(perimetro2))
+                .addGap(46, 46, 46))
             .addGroup(panelResultados1Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(tipoFigura2)
@@ -440,16 +410,12 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(tituloArea2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(area2)
-                        .addGap(32, 32, 32))
+                        .addContainerGap(81, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelResultados1Layout.createSequentialGroup()
                         .addComponent(tituloPerimetro2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(perimetro2)
-                        .addGap(18, 18, 18)
-                        .addComponent(tituloTipoTriangulo2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tipoTriangulo2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -988,8 +954,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JComboBox seleccionarFigura;
     private javax.swing.JLabel tipoFigura1;
     private javax.swing.JLabel tipoFigura2;
-    private javax.swing.JLabel tipoTriangulo1;
-    private javax.swing.JLabel tipoTriangulo2;
     private javax.swing.JLabel tituloArea1;
     private javax.swing.JLabel tituloArea2;
     private javax.swing.JLabel tituloCoordenada1;
@@ -999,7 +963,5 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel tituloPerimetro1;
     private javax.swing.JLabel tituloPerimetro2;
     private javax.swing.JLabel tituloPrincipal;
-    private javax.swing.JLabel tituloTipoTriangulo1;
-    private javax.swing.JLabel tituloTipoTriangulo2;
     // End of variables declaration//GEN-END:variables
 }

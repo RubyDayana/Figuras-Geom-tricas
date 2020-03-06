@@ -412,26 +412,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tipoTriangulo1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloTipoTriangulo1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="59" pref="73" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="area1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloArea1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloPerimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="perimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="area1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloArea1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tituloPerimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="perimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -451,19 +440,15 @@
                               <Component id="tituloArea1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="area1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace pref="81" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="tituloPerimetro1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="perimetro1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tituloTipoTriangulo1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tipoTriangulo1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -485,16 +470,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="perimetro1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="---"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tituloTipoTriangulo1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo de triangulo"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tipoTriangulo1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="---"/>
               </Properties>
@@ -552,26 +527,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="area2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloArea2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloPerimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="perimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tipoTriangulo2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloTipoTriangulo2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="59" pref="69" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="area2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="tituloArea2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tituloPerimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="perimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -591,19 +555,15 @@
                               <Component id="tituloArea2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="area2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace pref="81" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="tituloPerimetro2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="perimetro2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tituloTipoTriangulo2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tipoTriangulo2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -625,16 +585,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="perimetro2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="---"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tituloTipoTriangulo2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo de triangulo"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="tipoTriangulo2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="---"/>
               </Properties>
