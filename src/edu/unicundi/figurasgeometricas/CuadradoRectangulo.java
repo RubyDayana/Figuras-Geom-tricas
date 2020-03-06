@@ -12,6 +12,22 @@ public abstract class CuadradoRectangulo extends FigurasGeometricas {
 
     private int coordenadaX4;
     private int coordenadaY4;
+
+    public int getCoordenadaX4() {
+        return coordenadaX4;
+    }
+
+    public void setCoordenadaX4(int coordenadaX4) {
+        this.coordenadaX4 = coordenadaX4;
+    }
+
+    public int getCoordenadaY4() {
+        return coordenadaY4;
+    }
+
+    public void setCoordenadaY4(int coordenadaY4) {
+        this.coordenadaY4 = coordenadaY4;
+    }
     private int lado4;
     
     public CuadradoRectangulo(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3, int coordenadaX4, int coordenadaY4) {

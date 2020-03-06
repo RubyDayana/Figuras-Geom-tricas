@@ -35,6 +35,7 @@ public class Interfaz extends javax.swing.JFrame {
     private int coordenada3Y;
     private int coordenada4X;
     private int coordenada4Y;
+    private int contador;
     FigurasGeometricas[] figuras = new FigurasGeometricas[3];
 
     /**
@@ -547,21 +548,42 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_coor4PosicionYKeyTyped
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
-        validarSeleccion();
+       validarSeleccion();
         switch (seleccionFigura) {
             case 1:
                 Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                triangulo.hallarLados(coordenada1X,coordenada2X,coordenada3X,coordenada1Y,coordenada2Y,coordenada3Y);
+                triangulo.hallarPerimetro();
+                triangulo.hallarArea();
+                triangulo.hallaTipo();
                 figuras[0] = triangulo;
-
+                JOptionPane.showMessageDialog(null, "Se  agregó un Triangulo", "Figura Agregada", JOptionPane.INFORMATION_MESSAGE);
+                //limpiarCampos();
                 break;
             case 2:
-                Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+                Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y) {};
+                cuadrado.hallarLados(coordenada1X,coordenada2X,coordenada3X,coordenada1Y,coordenada2Y,coordenada3Y);
+                cuadrado.hallarLado();
+                cuadrado.hallarPerimetro();
+                cuadrado.hallarArea(); 
                 figuras[1] = cuadrado;
+                JOptionPane.showMessageDialog(null, "Se  agregó un Cuadrado", "Figura Agregada", JOptionPane.INFORMATION_MESSAGE);
+                //limpiarCampos();
                 break;
             case 3:
                 Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
                 figuras[2] = rectangulo;
+                JOptionPane.showMessageDialog(null, "Se  agregó un Rectangulo", "Figura Agregada", JOptionPane.INFORMATION_MESSAGE);
+               // limpiarCampos();
                 break;
+        }
+        
+        contador++;
+        if (contador == 2) {
+            graficar1.setEnabled(true);
+            agregar.setEnabled(false);
+            contador = 0;
+            
         }
 
     }//GEN-LAST:event_agregarActionPerformed
@@ -569,28 +591,38 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
         seleccionarFigura();
-        Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-        Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
+        //Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+
         Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
 
         for (int i = 0; i < figuras.length; i++) {
             if (figuras[i] instanceof Triangulo) {
-                triangulo.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
+                
+                Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+                /*triangulo.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
                 triangulo.hallarPerimetro();
                 triangulo.hallarArea();
                 triangulo.hallaTipo();
+                coordenada1X = figuras[i].getCoordenadaX1();
+                coordenada2X = figuras[i].getCoordenadaX2();
+                coordenada3X = figuras[i].getCoordenadaX3();
+                coordenada1Y = figuras[i].getCoordenadaY1();
+                coordenada2Y = figuras[i].getCoordenadaY2();
+                coordenada3Y = figuras[i].getCoordenadaY3(); 
+                */
+                
                 perimetro1.setText(String.valueOf(triangulo.getPerimetro()));
                 area1.setText(String.valueOf(triangulo.getArea()));
                 dibujar();
 
             } else if (figuras[i] instanceof Cuadrado) {
+                /*Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
                 cuadrado.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
                 cuadrado.hallarLado();
                 cuadrado.hallarPerimetro();
-                cuadrado.hallarArea();
+                cuadrado.hallarArea();    */  
                 
-                //dibujar();
-
+                dibujar();
             } else if (figuras[i] instanceof Rectangulo) {
                 perimetro1.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
                 area1.setText(String.valueOf(((Rectangulo) figuras[i]).getArea()));
@@ -653,7 +685,7 @@ public class Interfaz extends javax.swing.JFrame {
      * seleccionarFigura.
      */
     public void seleccionarFigura() {
-        graficar1.setEnabled(true);
+        
         seleccionFigura = seleccionarFigura.getSelectedIndex();
     }
 
@@ -702,23 +734,25 @@ public class Interfaz extends javax.swing.JFrame {
             obtenerCoordenadas();
         }
     }
+
     public void validarLadosFigura() {
         int lado1 = (int) Math.sqrt(Math.pow((coordenada2X - coordenada1X), 2) + Math.pow((coordenada2Y - coordenada1Y), 2));
         int lado2 = (int) Math.sqrt(Math.pow((coordenada3X - coordenada2X), 2) + Math.pow((coordenada3Y - coordenada2Y), 2));
         if (seleccionFigura == 2) {
             if ((coordenada1Y != coordenada2Y) && (coordenada2X != coordenada3X) && (coordenada3Y != coordenada4Y) && (coordenada4X != coordenada1X)) {
-            JOptionPane.showMessageDialog(null, "Digite las coordenadas correctamente para formar un Cuadrado", "Coordenadas incompatibles para un Cuadrado", JOptionPane.INFORMATION_MESSAGE);
-            } else if (lado1 !=lado2) {
+                JOptionPane.showMessageDialog(null, "Digite las coordenadas correctamente para formar un Cuadrado", "Coordenadas incompatibles para un Cuadrado", JOptionPane.INFORMATION_MESSAGE);
+            } else if (lado1 != lado2) {
                 JOptionPane.showMessageDialog(null, "Los lados son diferentes", "Coordenadas incompatibles para un Cuadrado", JOptionPane.INFORMATION_MESSAGE);
             }
         } else if (seleccionFigura == 3) {
             if ((coordenada1Y != coordenada2Y) && (coordenada2X != coordenada3X) && (coordenada3Y != coordenada4Y) && (coordenada4X != coordenada1X)) {
                 JOptionPane.showMessageDialog(null, "Digite las coordenadas correctamente para formar un Rectangulo", "Coordenadas incompatibles para un Rectangulo", JOptionPane.INFORMATION_MESSAGE);
-            } else if (lado1==lado2) {
+            } else if (lado1 == lado2) {
                 JOptionPane.showMessageDialog(null, "Los lados son iguales", "Coordenadas incompatibles para un Rectangulo", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }
+
     /**
      * Mensaje recursivo para mostrar advertencias
      */

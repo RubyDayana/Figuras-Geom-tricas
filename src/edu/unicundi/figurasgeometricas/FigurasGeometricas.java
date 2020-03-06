@@ -42,6 +42,34 @@ public abstract class FigurasGeometricas implements IOperaciones {
 
     }
 
+    public void setCoordenadaX1(int coordenadaX1) {
+        this.coordenadaX1 = coordenadaX1;
+    }
+
+    public void setCoordenadaX2(int coordenadaX2) {
+        this.coordenadaX2 = coordenadaX2;
+    }
+
+    public void setCoordenadaX3(int coordenadaX3) {
+        this.coordenadaX3 = coordenadaX3;
+    }
+
+    public void setCoordenadaY1(int coordenadaY1) {
+        this.coordenadaY1 = coordenadaY1;
+    }
+
+    public void setCoordenadaY2(int coordenadaY2) {
+        this.coordenadaY2 = coordenadaY2;
+    }
+
+    public void setCoordenadaY3(int coordenadaY3) {
+        this.coordenadaY3 = coordenadaY3;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
     public int getCoordenadaX1() {
         return coordenadaX1;
     }
