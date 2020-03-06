@@ -56,8 +56,8 @@
                       <Component id="graficar1" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="panelResultados" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="panelResultados1" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="panelResultados1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -109,35 +109,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="seleccionarFigura" min="-2" pref="160" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="seleccionarColor" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="tituloCoordenada2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="tituloCoordenada1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="digiteCoordenadas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="coor1PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="coor1PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="coor2PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="coor2PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tituloCoordenada3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                           <Component id="coor4PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
@@ -146,21 +128,53 @@
                                       </Group>
                                       <Component id="tituloCoordenada4" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Component id="coor3PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="coor3PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="seleccionarFigura" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="seleccionarColor" min="-2" pref="140" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCoordenada3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                              <Component id="coor3PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="coor3PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="tituloCoordenada1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                              <Component id="coor1PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="coor1PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tituloCoordenada2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <Component id="coor2PosicionX" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="coor2PosicionY" min="-2" pref="39" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="digiteCoordenadas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -174,31 +188,46 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="digiteCoordenadas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tituloCoordenada1" alignment="3" max="32767" attributes="0"/>
-                          <Component id="tituloCoordenada3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="tituloCoordenada4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="coor4PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="coor4PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="tituloCoordenada3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="coor3PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="coor3PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="coor3PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor3PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor1PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor1PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="tituloCoordenada1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="coor1PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="coor1PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="tituloCoordenada2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="coor2PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="coor2PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tituloCoordenada2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tituloCoordenada4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="coor4PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor2PosicionX" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor4PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="coor2PosicionY" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -245,11 +274,13 @@
                 <Property name="name" type="java.lang.String" value="tituloCoordenadas" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="tituloCoordenada1">
+            <Component class="javax.swing.JTextField" name="coor1PosicionY">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Primera Coordenada (X,Y)"/>
-                <Property name="name" type="java.lang.String" value="tituloCoor1" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="coor1PosicionY" noResource="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor1PosicionYKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="coor1PosicionX">
               <Properties>
@@ -262,13 +293,33 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor1PosicionXKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="coor1PosicionY">
+            <Component class="javax.swing.JLabel" name="tituloCoordenada1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Primera Coordenada (X,Y)"/>
+                <Property name="name" type="java.lang.String" value="tituloCoor1" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="coor4PosicionX">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="coor1PosicionX" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor4PosicionXKeyTyped"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="coor4PosicionY">
               <Properties>
                 <Property name="name" type="java.lang.String" value="coor1PosicionY" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor1PosicionYKeyTyped"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor4PosicionYKeyTyped"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="tituloCoordenada4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cuarta coordenada (X,Y)"/>
+                <Property name="name" type="java.lang.String" value="tituloCoor4" noResource="true"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="tituloCoordenada2">
               <Properties>
@@ -292,12 +343,6 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor2PosicionYKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="tituloCoordenada3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tercera Coordenada (X,Y)"/>
-                <Property name="name" type="java.lang.String" value="tituloCoor3" noResource="true"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="coor3PosicionX">
               <Properties>
                 <Property name="name" type="java.lang.String" value="coor1PosicionX" noResource="true"/>
@@ -314,27 +359,11 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor3PosicionYKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="tituloCoordenada4">
+            <Component class="javax.swing.JLabel" name="tituloCoordenada3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cuarta coordenada (X,Y)"/>
-                <Property name="name" type="java.lang.String" value="tituloCoor4" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Tercera Coordenada (X,Y)"/>
+                <Property name="name" type="java.lang.String" value="tituloCoor3" noResource="true"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="coor4PosicionX">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="coor1PosicionX" noResource="true"/>
-              </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor4PosicionXKeyTyped"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="coor4PosicionY">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="coor1PosicionY" noResource="true"/>
-              </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="coor4PosicionYKeyTyped"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -365,7 +394,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="481" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -384,21 +413,23 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="tipoTriangulo1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tipoTriangulo1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tituloTipoTriangulo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="59" pref="73" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="area1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloArea1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloTipoTriangulo1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="tituloPerimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="perimetro1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -522,21 +553,23 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="tipoTriangulo2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="area2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="tituloArea2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tituloTipoTriangulo2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="tituloPerimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="perimetro2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tipoTriangulo2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tituloTipoTriangulo2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="59" pref="69" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -570,7 +603,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="tipoTriangulo2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

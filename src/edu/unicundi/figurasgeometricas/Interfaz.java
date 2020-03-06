@@ -582,11 +582,7 @@ public class Interfaz extends javax.swing.JFrame {
                 cuadrado.hallarPerimetro();
                 cuadrado.hallarArea();
                 dibujar();
-                //cuadrado.hallarLado();
-                //cuadrado.getPerimetro();
-                //cuadrado.hallarArea();
-                //perimetro.setText(String.valueOf(((Cuadrado) figuras[i]).getPerimetro()));
-                //area.setText(String.valueOf(((Cuadrado) figuras[i]).getArea()));
+                
 
             } else if (figuras[i] instanceof Rectangulo) {
                 perimetro1.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
@@ -602,18 +598,21 @@ public class Interfaz extends javax.swing.JFrame {
      * seleccion de la figura que eligió el usuario para obtener tres pares de
      * coordenadas o cuatro pares, dependiendo del tipo de figura.
      */
+
     public void obtenerCoordenadas() {
         switch (seleccionFigura) {
-            case 1: {
+            case 1:
                 obtenerTresCoordenadas();
-            }
-            break;
-            case 2 | 3: {
+                break;
+            case 2:
                 obtenerCuatroCoordenadas();
-            }
-            break;
+                break;
+            case 3:
+                obtenerCuatroCoordenadas();
+                break;
         }
     }
+    
 
     /**
      * Este método obtiene el valor de 3 coordenadas.
