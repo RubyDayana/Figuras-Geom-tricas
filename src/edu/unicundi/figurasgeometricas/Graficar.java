@@ -58,7 +58,7 @@ public class Graficar extends JPanel {
                 break;
         }
 
-        repaint();
+        //repaint();
     }
 
     /**

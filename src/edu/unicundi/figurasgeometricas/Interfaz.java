@@ -42,6 +42,7 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
+        graficar1.setEnabled(false);
     }
 
     /**
@@ -58,18 +59,18 @@ public class Interfaz extends javax.swing.JFrame {
         seleccionarFigura = new javax.swing.JComboBox();
         seleccionarColor = new javax.swing.JComboBox();
         digiteCoordenadas = new javax.swing.JLabel();
-        tituloCoordenada1 = new javax.swing.JLabel();
-        coor1PosicionX = new javax.swing.JTextField();
         coor1PosicionY = new javax.swing.JTextField();
+        coor1PosicionX = new javax.swing.JTextField();
+        tituloCoordenada1 = new javax.swing.JLabel();
+        coor4PosicionX = new javax.swing.JTextField();
+        coor4PosicionY = new javax.swing.JTextField();
+        tituloCoordenada4 = new javax.swing.JLabel();
         tituloCoordenada2 = new javax.swing.JLabel();
         coor2PosicionX = new javax.swing.JTextField();
         coor2PosicionY = new javax.swing.JTextField();
-        tituloCoordenada3 = new javax.swing.JLabel();
         coor3PosicionX = new javax.swing.JTextField();
         coor3PosicionY = new javax.swing.JTextField();
-        tituloCoordenada4 = new javax.swing.JLabel();
-        coor4PosicionX = new javax.swing.JTextField();
-        coor4PosicionY = new javax.swing.JTextField();
+        tituloCoordenada3 = new javax.swing.JLabel();
         tituloPrincipal = new javax.swing.JLabel();
         planoCartesiano = new javax.swing.JPanel();
         panelResultados = new javax.swing.JPanel();
@@ -114,8 +115,12 @@ public class Interfaz extends javax.swing.JFrame {
         digiteCoordenadas.setToolTipText("");
         digiteCoordenadas.setName("tituloCoordenadas"); // NOI18N
 
-        tituloCoordenada1.setText("Primera Coordenada (X,Y)");
-        tituloCoordenada1.setName("tituloCoor1"); // NOI18N
+        coor1PosicionY.setName("coor1PosicionY"); // NOI18N
+        coor1PosicionY.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                coor1PosicionYKeyTyped(evt);
+            }
+        });
 
         coor1PosicionX.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         coor1PosicionX.setName("coor1PosicionX"); // NOI18N
@@ -125,12 +130,25 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        coor1PosicionY.setName("coor1PosicionY"); // NOI18N
-        coor1PosicionY.addKeyListener(new java.awt.event.KeyAdapter() {
+        tituloCoordenada1.setText("Primera Coordenada (X,Y)");
+        tituloCoordenada1.setName("tituloCoor1"); // NOI18N
+
+        coor4PosicionX.setName("coor1PosicionX"); // NOI18N
+        coor4PosicionX.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                coor1PosicionYKeyTyped(evt);
+                coor4PosicionXKeyTyped(evt);
             }
         });
+
+        coor4PosicionY.setName("coor1PosicionY"); // NOI18N
+        coor4PosicionY.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                coor4PosicionYKeyTyped(evt);
+            }
+        });
+
+        tituloCoordenada4.setText("Cuarta coordenada (X,Y)");
+        tituloCoordenada4.setName("tituloCoor4"); // NOI18N
 
         tituloCoordenada2.setText("Segunda Coordenada (X,Y)");
         tituloCoordenada2.setName("tituloCoor2"); // NOI18N
@@ -149,9 +167,6 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        tituloCoordenada3.setText("Tercera Coordenada (X,Y)");
-        tituloCoordenada3.setName("tituloCoor3"); // NOI18N
-
         coor3PosicionX.setName("coor1PosicionX"); // NOI18N
         coor3PosicionX.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -166,51 +181,22 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        tituloCoordenada4.setText("Cuarta coordenada (X,Y)");
-        tituloCoordenada4.setName("tituloCoor4"); // NOI18N
-
-        coor4PosicionX.setName("coor1PosicionX"); // NOI18N
-        coor4PosicionX.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                coor4PosicionXKeyTyped(evt);
-            }
-        });
-
-        coor4PosicionY.setName("coor1PosicionY"); // NOI18N
-        coor4PosicionY.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                coor4PosicionYKeyTyped(evt);
-            }
-        });
+        tituloCoordenada3.setText("Tercera Coordenada (X,Y)");
+        tituloCoordenada3.setName("tituloCoor3"); // NOI18N
 
         javax.swing.GroupLayout panelVariablesLayout = new javax.swing.GroupLayout(panelVariables);
         panelVariables.setLayout(panelVariablesLayout);
         panelVariablesLayout.setHorizontalGroup(
             panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVariablesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(digiteCoordenadas)
+                .addGap(99, 99, 99))
             .addGroup(panelVariablesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(panelVariablesLayout.createSequentialGroup()
-                        .addComponent(seleccionarFigura, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(seleccionarColor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(tituloCoordenada2)
-                    .addComponent(tituloCoordenada1)
+                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelVariablesLayout.createSequentialGroup()
                         .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelVariablesLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelVariablesLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(86, 86, 86)
-                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tituloCoordenada3)
                             .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelVariablesLayout.createSequentialGroup()
                                     .addGap(14, 14, 14)
@@ -219,15 +205,38 @@ public class Interfaz extends javax.swing.JFrame {
                                     .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(tituloCoordenada4))
                             .addGroup(panelVariablesLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVariablesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(digiteCoordenadas)
-                .addGap(99, 99, 99))
+                                .addComponent(seleccionarFigura, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVariablesLayout.createSequentialGroup()
+                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelVariablesLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tituloCoordenada3)
+                                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(panelVariablesLayout.createSequentialGroup()
+                                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tituloCoordenada1)
+                                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tituloCoordenada2)
+                                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(33, 33, 33))))
         );
         panelVariablesLayout.setVerticalGroup(
             panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,27 +247,36 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(digiteCoordenadas)
+                .addGap(22, 22, 22)
+                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                        .addComponent(tituloCoordenada4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                        .addComponent(tituloCoordenada3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tituloCoordenada1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tituloCoordenada3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tituloCoordenada2)
-                    .addComponent(tituloCoordenada4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37))
+                .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                        .addComponent(tituloCoordenada1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39))
+                    .addGroup(panelVariablesLayout.createSequentialGroup()
+                        .addComponent(tituloCoordenada2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelVariablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         tituloPrincipal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -276,7 +294,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         planoCartesianoLayout.setVerticalGroup(
             planoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
 
         panelResultados.setBackground(new java.awt.Color(236, 239, 241));
@@ -306,18 +324,19 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelResultadosLayout.createSequentialGroup()
-                        .addComponent(tipoTriangulo1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tipoTriangulo1)
+                            .addComponent(tituloTipoTriangulo1))
+                        .addGap(59, 73, Short.MAX_VALUE))
                     .addGroup(panelResultadosLayout.createSequentialGroup()
                         .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(area1)
-                            .addComponent(tituloArea1)
-                            .addComponent(tituloTipoTriangulo1))
+                            .addComponent(tituloArea1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tituloPerimetro1)
                             .addComponent(perimetro1))
-                        .addGap(25, 25, 25))))
+                        .addGap(42, 42, 42))))
             .addGroup(panelResultadosLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(tipoFigura1)
@@ -391,18 +410,19 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelResultados1Layout.createSequentialGroup()
-                        .addComponent(tipoTriangulo2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelResultados1Layout.createSequentialGroup()
                         .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(area2)
-                            .addComponent(tituloArea2)
-                            .addComponent(tituloTipoTriangulo2))
+                            .addComponent(tituloArea2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tituloPerimetro2)
                             .addComponent(perimetro2))
-                        .addGap(25, 25, 25))))
+                        .addGap(46, 46, 46))
+                    .addGroup(panelResultados1Layout.createSequentialGroup()
+                        .addGroup(panelResultados1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tipoTriangulo2)
+                            .addComponent(tituloTipoTriangulo2))
+                        .addGap(59, 69, Short.MAX_VALUE))))
             .addGroup(panelResultados1Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(tipoFigura2)
@@ -428,7 +448,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(tituloTipoTriangulo2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tipoTriangulo2)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -445,8 +465,8 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(graficar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelResultados1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelResultados1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap(306, Short.MAX_VALUE)
@@ -531,27 +551,15 @@ public class Interfaz extends javax.swing.JFrame {
         switch (seleccionFigura) {
             case 1:
                 Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                //triangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                /*triangulo.hallarPerimetro();
-                 triangulo.hallarArea();
-                 triangulo.hallaTipo();*/
                 figuras[0] = triangulo;
 
                 break;
             case 2:
                 Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-                //cuadrado.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                /* cuadrado.hallarLado();
-                 cuadrado.getPerimetro();
-                 cuadrado.hallarArea();*/
                 figuras[1] = cuadrado;
                 break;
             case 3:
                 Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
-                // rectangulo.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
-                /* rectangulo.hallarLado();
-                 rectangulo.getPerimetro();
-                 rectangulo.hallarArea();*/
                 figuras[2] = rectangulo;
                 break;
         }
@@ -560,8 +568,7 @@ public class Interfaz extends javax.swing.JFrame {
 
 
     private void graficar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficar1ActionPerformed
-        validarSeleccion();
-
+        seleccionarFigura();
         Triangulo triangulo = new Triangulo(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
         Cuadrado cuadrado = new Cuadrado(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
         Rectangulo rectangulo = new Rectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
@@ -575,14 +582,14 @@ public class Interfaz extends javax.swing.JFrame {
                 perimetro1.setText(String.valueOf(triangulo.getPerimetro()));
                 area1.setText(String.valueOf(triangulo.getArea()));
                 dibujar();
-                //tipoTriangulo.setText(((Triangulo) figuras[i]).getTipoTriangulo());
+
             } else if (figuras[i] instanceof Cuadrado) {
                 cuadrado.hallarLados(figuras[i].getCoordenadaX1(), figuras[i].getCoordenadaX2(), figuras[i].getCoordenadaX3(), figuras[i].getCoordenadaY1(), figuras[i].getCoordenadaY2(), figuras[i].getCoordenadaY3());
                 cuadrado.hallarLado();
                 cuadrado.hallarPerimetro();
                 cuadrado.hallarArea();
-                dibujar();
                 
+                //dibujar();
 
             } else if (figuras[i] instanceof Rectangulo) {
                 perimetro1.setText(String.valueOf(((Rectangulo) figuras[i]).getPerimetro()));
@@ -595,10 +602,9 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_graficar1ActionPerformed
     /**
      * Este método utiliza la variable seleccionFigura, que obtiene el indice de
-     * seleccion de la figura que eligió el usuario para obtener tres pares de
+     * seleccion de la figura que eligió el usuario para obtener tres pares de5
      * coordenadas o cuatro pares, dependiendo del tipo de figura.
      */
-
     public void obtenerCoordenadas() {
         switch (seleccionFigura) {
             case 1:
@@ -612,7 +618,6 @@ public class Interfaz extends javax.swing.JFrame {
                 break;
         }
     }
-    
 
     /**
      * Este método obtiene el valor de 3 coordenadas.
@@ -630,9 +635,9 @@ public class Interfaz extends javax.swing.JFrame {
      * Este método obtiene el valor de 4 coordenadas.
      */
     public void obtenerCuatroCoordenadas() {
-        obtenerTresCoordenadas();
         coordenada4X = Integer.parseInt(coor4PosicionX.getText());
         coordenada4Y = Integer.parseInt(coor4PosicionY.getText());
+        obtenerTresCoordenadas();
     }
 
     /**
@@ -648,6 +653,7 @@ public class Interfaz extends javax.swing.JFrame {
      * seleccionarFigura.
      */
     public void seleccionarFigura() {
+        graficar1.setEnabled(true);
         seleccionFigura = seleccionarFigura.getSelectedIndex();
     }
 
@@ -659,17 +665,14 @@ public class Interfaz extends javax.swing.JFrame {
     public void validarTipoFigura() {
         seleccionarFigura();
         switch (seleccionFigura) {
-            case 1: {
+            case 1:
                 ocultarCamposCoordenadas();
-            }
-            break;
-            case 2 | 3: {
+                break;
+            case 2 | 3:
                 verCamposCoordenadas();
-            }
-            break;
-            default: {
+                break;
+            default:
                 verCamposCoordenadas();
-            }
         }
     }
 
@@ -691,17 +694,40 @@ public class Interfaz extends javax.swing.JFrame {
             if (coor4PosicionX.getText().isEmpty() || coor4PosicionY.getText().isEmpty()) {
                 faltaCoordenada = "cuarta";
                 mensajeCamposVacios();
+            } else {
+                obtenerCoordenadas();
+                validarLadosFigura();
             }
-        } else {
+        } else if (seleccionFigura == 1) {
             obtenerCoordenadas();
         }
     }
-
+    public void validarLadosFigura() {
+        int lado1 = (int) Math.sqrt(Math.pow((coordenada2X - coordenada1X), 2) + Math.pow((coordenada2Y - coordenada1Y), 2));
+        int lado2 = (int) Math.sqrt(Math.pow((coordenada3X - coordenada2X), 2) + Math.pow((coordenada3Y - coordenada2Y), 2));
+        if (seleccionFigura == 2) {
+            if ((coordenada1Y != coordenada2Y) && (coordenada2X != coordenada3X) && (coordenada3Y != coordenada4Y) && (coordenada4X != coordenada1X)) {
+            JOptionPane.showMessageDialog(null, "Digite las coordenadas correctamente para formar un Cuadrado", "Coordenadas incompatibles para un Cuadrado", JOptionPane.INFORMATION_MESSAGE);
+            } else if (lado1 !=lado2) {
+                JOptionPane.showMessageDialog(null, "Los lados son diferentes", "Coordenadas incompatibles para un Cuadrado", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else if (seleccionFigura == 3) {
+            if ((coordenada1Y != coordenada2Y) && (coordenada2X != coordenada3X) && (coordenada3Y != coordenada4Y) && (coordenada4X != coordenada1X)) {
+                JOptionPane.showMessageDialog(null, "Digite las coordenadas correctamente para formar un Rectangulo", "Coordenadas incompatibles para un Rectangulo", JOptionPane.INFORMATION_MESSAGE);
+            } else if (lado1==lado2) {
+                JOptionPane.showMessageDialog(null, "Los lados son iguales", "Coordenadas incompatibles para un Rectangulo", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
     /**
      * Mensaje recursivo para mostrar advertencias
      */
     public void mensajeCamposVacios() {
         JOptionPane.showMessageDialog(null, "Digite las coordenadas de la " + faltaCoordenada + " posicion ", "CAMPOS VACIOS", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void validarCaudradoRectangulo() {
+
     }
 
     /**
@@ -869,7 +895,7 @@ public class Interfaz extends javax.swing.JFrame {
     public JPanel getPlanoCartesiano() {
         return planoCartesiano;
     }
-    
+
     /**
      * @param args the command line arguments
      */
